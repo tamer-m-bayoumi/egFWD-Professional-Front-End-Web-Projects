@@ -141,6 +141,7 @@ section {
   font-size: 20px;
   font-family: "Merriweather", serif;
   transition: opacity 0.5s, transform 0.5s;
+  cursor: pointer;
 }
 
 #scroll__to__top.show {
@@ -265,6 +266,7 @@ section.your_active_class .landing__container::after {
 .material-symbols-outlined {
   float: right;
   margin-top: 20px;
+  cursor: pointer;
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 

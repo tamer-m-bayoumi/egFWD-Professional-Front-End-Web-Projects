@@ -56,8 +56,7 @@ function setViewedSectionToActiveInMenu() {
 
     if (
       sectionVerticalPosition > 0 &&
-      Math.floor(sectionVerticalPosition) <
-        currentSection.getBoundingClientRect().height
+      sectionVerticalPosition < currentSection.getBoundingClientRect().height
     ) {
       menuListItemsLinks[index].classList.add("your_active_class");
       sections[index].classList.add("your_active_class");
