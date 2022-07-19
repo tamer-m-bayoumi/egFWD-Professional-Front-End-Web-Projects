@@ -22,7 +22,7 @@ const navList = document.querySelector("#navbar__list");
 const menuHeader = document.querySelector(".page__header");
 const mainBody = document.querySelector("main");
 const scrollToTopBtn = document.querySelector("#scroll__to__top");
-var menuVisibilityTimeout = null;
+let menuVisibilityTimeout = null;
 
 /**
  * End Global Variables
@@ -32,9 +32,9 @@ var menuVisibilityTimeout = null;
 
 // Set viewed section to be active in menu
 function setViewedSectionToActiveInMenu() {
-  let sections = document.querySelectorAll(".section__container");
-  let menuListItemsLinks = document.querySelectorAll(".menu__link");
-  let headerHight = document
+  const sections = document.querySelectorAll(".section__container");
+  const menuListItemsLinks = document.querySelectorAll(".menu__link");
+  const headerHight = document
     .querySelector(".page__header")
     .getBoundingClientRect().height;
 
@@ -46,7 +46,7 @@ function setViewedSectionToActiveInMenu() {
 
   // locate the viewed section and set the relative menu item to active
   sections.forEach(function (currentSection, index) {
-    let sectionVerticalPosition =
+    const sectionVerticalPosition =
       currentSection.getBoundingClientRect().height +
       currentSection.getBoundingClientRect().top -
       headerHight;
@@ -90,7 +90,7 @@ function setMenuVisbility() {
 
 // toggle menu visibilty
 function toggleMenuVisibility() {
-  let isMenuHidden = menuHeader.classList.contains("hide__nav__menu");
+  const isMenuHidden = menuHeader.classList.contains("hide__nav__menu");
   if (window.scrollY == 0 && isMenuHidden) {
     menuHeader.classList.remove("hide__nav__menu");
     return;
@@ -110,17 +110,17 @@ function toggleMenuVisibility() {
 
 // Build Nav Menu from Sections
 function buildNav() {
-  let sections = document.querySelectorAll(".section__container");
+  const sections = document.querySelectorAll(".section__container");
   const menuListItemsContainer = document.createDocumentFragment();
 
   // build menu items based on sections
   sections.forEach(function (currentSection) {
-    let landingDiv = currentSection.querySelector(".landing__container");
-    let collabseSpan = currentSection.querySelector(
+    const landingDiv = currentSection.querySelector(".landing__container");
+    const collabseSpan = currentSection.querySelector(
       ".material-symbols-outlined"
     );
-    let menuListItem = document.createElement("li");
-    let menuListItemLink = document.createElement("a");
+    const menuListItem = document.createElement("li");
+    const menuListItemLink = document.createElement("a");
 
     menuListItemLink.classList.add("menu__link");
     menuListItemLink.innerText = currentSection.getAttribute("data-nav");
@@ -143,7 +143,7 @@ function buildNav() {
 // handle collabse button click
 function handleCollabseButtonClickEvent(collabseSpan, landingDiv) {
   collabseSpan.addEventListener("click", () => {
-    let isCollabsed = collabseSpan.innerText == "expand_more";
+    const isCollabsed = collabseSpan.innerText == "expand_more";
     if (isCollabsed) {
       collabseSpan.innerText = "expand_less";
     } else {
